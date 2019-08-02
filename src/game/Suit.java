@@ -25,7 +25,7 @@ public class Suit {
         public enum Suits {HEARTS, CLUBS,SPADES,DIAMONDS};
         private final Suit suitTxt;
 
-        private Suit(Suit SuitTxt) //Since constructor is private in uml so how will we give value to SuitTxt
+        private Suit(Suit SuitTxt) 
         {
             this.suitTxt=SuitTxt;
         }
