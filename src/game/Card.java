@@ -49,7 +49,7 @@ public class Card {
         
     }
         else{
-            str= "Face down (nothing to see here)";
+            str= "Card is face down.";
         }
        return str;
 }
