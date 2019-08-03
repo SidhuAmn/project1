@@ -14,14 +14,7 @@ import java.util.ArrayList;
 public class Deck extends Hand {
     
     public void  populate(){
-        /*
-        For suit in Suits
-          For rank in Rank
-               SET card to card with rank & suit
-               CALL cards.add with card
-          END FOR 
-        END FOR
-        */
+      
         for(Suit suit: Suit.values()){
             for(Rank rank:Rank.values()){
                 Card card = new Card(rank,suit);
@@ -35,27 +28,14 @@ public class Deck extends Hand {
         
         ArrayList<Card> temp = new ArrayList<Card>();
         while(!cards.isEmpty()) {
-            int loc=(int)(Math.random()*cards.size());
-            temp.add(cards.get(loc));
-            cards.remove(loc);   
+            int rand=(int)(Math.random()*cards.size());
+            temp.add(cards.get(rand));
+            cards.remove(rand);   
         }
         cards=temp;
            
         }
-    public  void deal(Hand[] hands,int perHand){
-        for(int i=0; i<perHand;i++){
-            for(int j = 0; j<hands.length;j++){
-                this.give(cards.get(0),hands[j]);
-            }
-        }
-    }
-    
-    public void deal(Hand hand, int perHand){
-        //Deal to a single hand
-        for(int i=0;i<perHand;i++){
-            this.give(cards.get(0),hand);
-        }
-    }
+   
     
     public void flipCard(Card c){
         c.flipCard();
