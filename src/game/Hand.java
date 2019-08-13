@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package GinRummy;
 
 import java.util.ArrayList;
 
@@ -12,44 +12,29 @@ import java.util.ArrayList;
  * @author Owner
  */
 public class Hand {
-     public ArrayList<Card> cards;
-    //
-    public Hand(){
-        cards = new ArrayList<Card>();
-    }
-    public void clear(){
-        cards.clear();
-    }
-    public void add(Card card){
-        cards.add(card);
-    }
-    public String showHand(){
-        /*
-        show cards only if all cards are face up
-        */
-        boolean allFaceUp = true;
-        String str = "";
-        for(Card c: cards){
-            str+= c.toString()+"\n";
-           
-    }
-    public void flipCard(){
-        for(Card c : cards){
-            c.flipCard();
-        }
-    }
-    
-   
-    
-    public boolean give(Card card,Hand otherHand){
-         if(!cards.contains(card)){
-             return false;
-         }        
-         else{
-             cards.remove(card);
-             otherHand.add(card);
-             return true;
-         }
-    } 
-    
+    private ArrayList<Card> hand;
+	public Hand() {
+		this.hand=new ArrayList<Card>();
+	}
+
+	public Hand(ArrayList<Card> hand) {
+		super();
+		this.hand = hand;
+	}
+	
+	public ArrayList<Card> getHand() {
+		return hand;
+	}
+
+	public void add(Card c) {
+		this.hand.add(c);
+	}
+	public Card remove(int index) {
+		return this.hand.remove(index-1);
+	}
+
+	@Override
+	public String toString() {
+		return "Hand [hand=" + hand + "]";
+	}
 }

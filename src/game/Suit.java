@@ -1,38 +1,24 @@
-package game;
-
-public class Suit {
-    
-    private String SuitTxt;
-    
-        public enum suits {HEARTS, CLUBS,SPADES,DIAMONDS};
-        
-        private Suit(String SuitTxt) //Since constructor is private in uml so how will we give value to SuitTxt
-        {
-            this.SuitTxt=SuitTxt;
-        }
-        
-	public String printSuit() {
-            return SuitTxt;		
-	}
-}
-
-
-
-
 /*
-public class Suit {
-    
-        public enum Suits {HEARTS, CLUBS,SPADES,DIAMONDS};
-        private final Suit suitTxt;
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GinRummy;
 
-        private Suit(Suit SuitTxt) 
-        {
-            this.suitTxt=SuitTxt;
-        }
-        
-	public Suit printSuit() {
-            return this.suitTxt;		
+/**
+ *
+ * @author Owner
+ */
+public enum Suit {
+    
+	CLUBS(1),
+	DIAMONDS(2),
+	HEARTS(3),
+	SPADES(4);
+	
+	public final int order; // for organizing hand
+
+	Suit(int order){
+		this.order = order;
 	}
 }
-
-*/

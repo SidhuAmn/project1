@@ -3,54 +3,56 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package GinRummy;
 
 /**
  *
  * @author Owner
  */
+
 public class Card {
-     //Private fileds
-    private Suit suit;
-    private Rank rank;
-    public boolean isFaceUp;
-    
-    //Constructor
-    
-    public Card(Rank rank,Suit suit){
-        this.rank = rank;
-        this.suit = suit;
-        
-        isFaceUp = false;
-    }
-    
-    //public methods
-    public String getSuit(){
-        return suit.printSuit();
-    }
-    
-    public int getRank(){
-        return rank.getRank();
-    }
-    
-    public String printRank(){
-        //get rank as string (primarily for aces)
-        return rank.printRank();
-    }
-    public void flipCard(){
-        isFaceUp = ! isFaceUp;
-    }
-    
-    
-    public String toString(){
-        String str = "";
-        if(isFaceUp){
-        str += rank.printRank() + " of "+suit.printSuit();
-        
-    }
-        else{
-            str= "Card is face down.";
-        }
-       return str;
-}
+	
+	private Rank rank;
+	private Suit suit;
+	
+	public Card(){}
+	
+	Card(Rank rank, Suit suit){
+		
+		this.rank = rank;
+		this.suit = suit;
+	}
+	
+	Card(int rankNum, int suitNum){
+		
+		for (Rank r : Rank.values()){
+			if(r.ordinal() == rankNum)
+				this.rank = r;
+		}
+		for (Suit s : Suit.values()){
+			if(s.ordinal() == suitNum)
+				this.suit = s;
+		}
+	}
+
+	public int getPoints(){
+		return this.rank.points;
+	}
+	
+	public int getOrder(){
+		return this.suit.order;
+	}
+	
+	public Rank getRank(){
+		return this.rank;
+	}
+	
+	public Suit getSuit(){
+		return this.suit;
+	}
+
+	@Override
+	public String toString() {
+		return "Card [rank=" + rank + ", suit=" + suit + "]";
+	}
 }
