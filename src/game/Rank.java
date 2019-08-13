@@ -7,7 +7,8 @@ package GinRummy;
 
 /**
  *
- * @author Owner
+ * @author Timur Sadykhov
+ * @modified by Group GinRummy
  */
 public enum Rank {
     ACE(1),

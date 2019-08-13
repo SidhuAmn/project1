@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Owner
+ * @author Timur Sadykhov
+ * @modified by Group GinRummy
  */
 public class Hand {
     private ArrayList<Card> hand;
